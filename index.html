@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Selamat Ulang Tahun Reista</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        .card {
+            transition: height 0.5s;
+        }
+
+        .card.expanded {
+            height: 90vh;
+        }
+
+        #boxgift {
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        #boxgift:hover {
+            transform: scale(1.2);
+        }
+
+        #concard.hidden {
+            display: none;
+        }
+
+        .fade-out {
+            opacity: 0;
+            transform: scale(0.9);
+            transition: all 0.5s ease;
+        }
+    </style>
+</head>
+
+<body class="flex items-center justify-center min-h-screen" style="background-color: pink;">
+    <audio id="bg-music" src="hbd-web/assets/audio/hbd.mp3" loop preload="auto"></audio>
+    <div class="relative w-full max-w-4xl">
+        <div id="boxgift">
+            <h1 class="text-[50px] text-center font-bold text-orange-50">Happy Birthday<br>Reista🎉</h1>
+            <p class="text-center text-[150px]">🎁</p>
+        </div>
+        <div id="concard" class="hidden">
+            <div id="card" style="background-color: white;"
+                class="card shadow-xl rounded-lg px-4 py-2 text-white text-lg font-bold h-24 overflow-hidden">
+                <h1 class="text-2xl" style="color: black;">Dear: Reista Kusuma Apriliana✨</h1>
+                <p id="content" class="hidden mt-4"
+                    style="color: black; font-weight: 300; font-size: 16px; padding-right: 100px;">Assalamualaikum
+                    Reei💖<br><br>Selamat ulang tahun yaa...😄, Selamat bertambah usia, semoga di usia kamu yang ke 22
+                    tahun
+                    ini, semua harapan dan impian yang kamu simpan dalam hati bisa satu persatu terwujud.<br>
+                    Semoga kamu selalu dikelilingi orang-orang yang tulus sayang sama kamu, dan semoga langkahmu makin
+                    ringan untuk berjalan menuju segala hal baik yang kamu cita-citakan.😊<br><br>
+                    Mungkin harapan-harapanku buat kamu udah nggak penting lagi, tapi di sini aku selalu berharap yang
+                    terbaik buat kamu, aku berharap kamu bisa dapat kebahagiaan yang kamu inginkan sedari dulu, aku
+                    berharap
+                    agar kamu senantiasa diberi kemudahan dalam hal apapun tentunya yang baik buatmu.😊 Semoga kamu jadi
+                    pribadi yang lebih kuat lagi dari sebelumnya yang lebih sabar lagi dalam menghadapi
+                    apapun.🤗<br><br>
+                    Oh iya, jangan lupa jaga kesehatan ya, jangan terlalu maksain diri, semisal capek istirahat
+                    sebentar,
+                    jangan lupa makan atau
+                    jangan skip makan juga yaaaa...., jangan lupa kontrol teratur sama obatnya jangan sampe lupa di
+                    minum
+                    jugaa
+                    (masih kontrol kan??) Harapanku kamu udh sembuh total dan nggak usah kontrol lagi.😊<br><br>
+                    Sekali lagi selamat ulang tahun yaaa🥳, semoga kamu bahagia selaluuuuu💐<br>
+                    Makasih udah mau baca ini💛<br><br>
+                    Dari Manusia bernama (<b>Fachri🍂</b>)<br>
+                    <button>
+                        <a href="https://wa.me/6285855477650?text=Aku%20mau%20dikado%20🎁" target="_blank">
+                            Klik disini buat minta kado
+                        </a>
+                    </button>
+                </p>
+            </div>
+            <div class="absolute inset-x-0 bottom-0 flex justify-center transform translate-y-1/2">
+                <button id="toggleButton" class="p-2 focus:outline-none">
+                    <i class="fas fa-heart text-[80px]" style="color: red;"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('toggleButton').addEventListener('click', function () {
+            var card = document.getElementById('card');
+            var content = document.getElementById('content');
+            card.classList.toggle('expanded');
+            content.classList.toggle('hidden');
+        });
+
+        function showCard() {
+            // Ambil elemen berdasarkan id
+            const boxgift = document.getElementById('boxgift');
+            const concard = document.getElementById('concard');
+            const music = document.getElementById('bg-music');
+
+            // Sembunyikan boxgift
+            boxgift.classList.add('fade-out');
+
+            // Setelah transisi selesai (0.5 detik), sembunyikan boxgift
+            setTimeout(() => {
+                boxgift.style.display = 'none';
+                concard.classList.remove('hidden'); // Tampilkan card
+            }, 500);
+
+            music.play().catch(error => {
+                console.log("Autoplay blocked, user interaction needed:", error);
+            });
+        }
+
+        // Pasang event listener saat boxgift diklik
+        document.getElementById('boxgift').addEventListener('click', showCard);
+    </script>
+</body>
+
+</html>
