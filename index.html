@@ -16,6 +16,12 @@
             height: 90vh;
         }
 
+        @media (max-width: 640px) {
+            .card.expanded {
+                height: 150vh;
+            }
+        }
+
         #boxgift {
             cursor: pointer;
             transition: transform 0.3s;
@@ -39,17 +45,18 @@
 
 <body class="flex items-center justify-center min-h-screen" style="background-color: pink;">
     <audio id="bg-music" src="audio/hbd.mp3" loop preload="auto"></audio>
-    <div class="relative w-full max-w-4xl">
-        <div id="boxgift">
-            <h1 class="text-[50px] text-center font-bold text-orange-50">Happy Birthday<br>Reista🎉</h1>
-            <p class="text-center text-[150px]">🎁</p>
+    <div class="relative w-full max-w-2xl">
+        <!-- Kotak Gift -->
+        <div id="boxgift" class="text-center">
+            <h1 class="text-3xl sm:text-5xl font-bold text-orange-50 leading-tight">Happy Birthday<br>Reista 🎉</h1>
+            <p class="text-[100px] sm:text-[150px]">🎁</p>
         </div>
-        <div id="concard" class="hidden">
-            <div id="card" style="background-color: white;"
-                class="card shadow-xl rounded-lg px-4 py-2 text-white text-lg font-bold h-24 overflow-hidden">
-                <h1 class="text-2xl" style="color: black;">Dear: Reista Kusuma Apriliana✨</h1>
-                <p id="content" class="hidden mt-4"
-                    style="color: black; font-weight: 300; font-size: 16px; padding-right: 100px;">Assalamualaikum
+
+        <!-- Kartu Ucapan -->
+        <div id="concard" class="hidden mt-6">
+            <div id="card" class="card bg-white shadow-xl rounded-lg p-6 text-black text-center h-24 overflow-hidden">
+                <h1 class="text-xl sm:text-2xl font-semibold">Dear: Reista Kusuma Apriliana ✨</h1>
+                <p id="content" class="hidden mt-4 text-sm sm:text-base font-light text-left">Assalamualaikum
                     Reei💖<br><br>Selamat ulang tahun yaa...😄, Selamat bertambah usia, semoga di usia kamu yang ke 22
                     tahun
                     ini, semua harapan dan impian yang kamu simpan dalam hati bisa satu persatu terwujud.<br>
